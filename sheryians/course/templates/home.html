@@ -1,0 +1,624 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo_sh.webp' %}">
+    <title>Sheryians Coding School | Learn Coding in India</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+     <style>
+        @font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Regular.otf' %}") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Light.otf' %}") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Ultrabold.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "juana";
+  src: url("{% static 'fonts/Fontspring-DEMO-juana-thinit.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  --text-color: #24cfa6;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  background-image: url("{% static 'images/background.svg' %}");
+  color: white;
+  font-family: "PPNeueMachina", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  margin-top: -80px;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  img {
+    width: 7%;
+    margin-left: 100px;
+  }
+
+  .logo {
+    position: relative;
+    top: 14px;
+  }
+
+  .text {
+    position: absolute;
+    left: 140px;
+    top: 10px;
+  }
+
+  .right {
+    margin-left: 100px;
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 400px;
+    gap: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+  }
+
+  button {
+    background-color: var(--text-color);
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: -10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+#shake {
+  display: inline-block;
+  color: brown;
+  font-weight: 700;
+  animation: shake 2.8s infinite;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(-7px, 0);
+  }
+  10% {
+    transform: translate(7px, 0);
+  }
+  15% {
+    transform: translate(-7px, 0);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.maintext {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 77px;
+  margin-top: 80px;
+
+  .first {
+    margin-top: 80px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    .col {
+      color: var(--text-color);
+    }
+  }
+
+  .mid {
+    margin-top: -30px;
+  }
+
+  .last {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: -30px;
+
+    .italic {
+      font-style: italic;
+      font-family: "juana";
+    }
+  }
+
+  .impbut {
+    margin-top: -20px;
+
+    button {
+      background-color: var(--text-color);
+      width: 350px;
+      height: 43px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 550;
+      font-size: 18px;
+    }
+  }
+}
+
+.movedtext {
+  position: absolute;
+  left: 1095px;
+  bottom: 300px;
+  font-family: Helvetica;
+  font-size: 13px;
+
+  .first {
+    display: flex;
+    .col {
+      color: var(--text-color);
+    }
+  }
+
+  .sec {
+    display: flex;
+    .col {
+      color: var(--text-color);
+    }
+  }
+}
+
+.subs {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  text-align: center;
+  margin-left: 300px;
+  margin-top: 150px;
+}
+
+.wedo {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 150px;
+
+  .col {
+    color: var(--text-color);
+  }
+}
+
+.iframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  button {
+    background-color: var(--text-color);
+    width: 300px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+}
+
+.offer {
+  margin-top: 70px;
+  margin-left: 100px;
+  left: 100px;
+  font-size: 42px;
+}
+
+.cards {
+  margin-top: 20px;
+  font-family: Helvetica;
+  .firstrow {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 50px;
+    gap: 30px;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+    }
+
+    .card {
+      width: 100%;
+      height: 420px;
+      border-radius: 5px;
+      background-color: rgb(41, 38, 38);
+
+      button {
+        width: 100%;
+        height: 40px;
+        background-color: var(--text-color);
+        border: none;
+        font-size: 25px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .inner {
+        margin: 15px 15px 15px 15px;
+
+        .live {
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+
+          #colr {
+            background-color: rgb(212, 71, 71);
+            border-radius: 5px;
+            font-size: 16px;
+          }
+
+          #colb {
+            background-color: rgba(137, 128, 128, 0.351);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+
+        .last {
+          color: var(--text-color);
+          font-size: 14px;
+          margin-top: 55px;
+        }
+        .amt {
+          display: flex;
+          justify-content: space-evenly;
+          font-size: 21px;
+
+          #del {
+            color: rgb(184, 161, 161);
+          }
+
+          #off {
+            font-size: 13px;
+            background-color: aliceblue;
+            color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.comp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 50px;
+
+  .first {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .col {
+      color: var(--text-color);
+    }
+  }
+}
+
+.compimg {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  img {
+    width: 75%;
+  }
+}
+
+.but {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  button {
+    background-color: var(--text-color);
+    width: 300px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+hr {
+  margin-top: 100px;
+  width: 95%;
+  margin-left: 40px;
+}
+
+.footer {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+
+  a:hover {
+    color: var(--text-color);
+  }
+  
+  .left1 {
+    margin-top: 20px;
+    margin-left: 100px;
+    #img {
+      width: 10%;
+    }
+  }
+
+  .left2 {
+    p {
+      margin-top: 15px;
+    }
+  }
+
+  .right1{
+    margin-left: 200px;
+
+    p {
+      margin-top: 15px;
+    }
+  }
+
+  .right2{
+    margin-left: 200px;
+    font-size: 14px;
+
+    #fir{
+      margin-top: 15px;
+    }
+
+    #email{
+      margin-top: 15px;
+    }
+
+    #address{
+      margin-top: 15px;
+    }
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+     </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href=""><img src="{% static 'images/logo.png' %}" alt=""></a>
+        </div>
+        <div class="text">
+            <a href="">
+                <p>Sheryians</p>
+                <p>coding school</p>
+            </a>
+        </div>
+        <div class="right">
+            <a href="{% url 'get' %}">Home</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="" id="shake">Cohort 2.0</a>
+            <a href="">Request Callback</a>
+            <a href="{% url 'sign'%}"><button>Sign In</button></a>
+        </div>
+    </div>
+    <div class="maintext">
+        <div class="first">
+            <p>We only&nbsp;<div class="col">teach</div></p>
+        </div>
+        <div class="mid">
+            <p>What we are really</p>
+        </div>
+        <div class="last">
+            <p>really&nbsp;<div class="italic">good</div>&nbsp;at.</p>
+        </div>
+        <div class="impbut">
+            <a href=""><button>Check Courses-Make an Impact</button></a>
+        </div>
+    </div>
+    <div class="movedtext">
+        <div class="first">
+            <p>Get ready to&nbsp;<div class="col">accelerate your</div></p>
+        </div>
+        <div class="sec">
+            <p><div class="col">career</div>&nbsp;with customized courses</p>
+        </div>
+        <div class="third">
+            and leave your mark in the tech
+        </div>
+        <div class="last">
+            industry
+        </div>
+    </div>
+    <div class="subs">
+        <div class="taught">
+            <h2>25k+</h2>
+            <p>Students taught</p>
+        </div>
+        <div class="instruct">
+            <h2>20+</h2>
+            <p>Instructors</p>
+        </div>
+        <div class="Yousubs">
+            <h2>569K+</h2>
+            <p>Youtube Subs.</p>
+        </div>
+    </div>
+    <div class="wedo">
+        <p>We do whatever it takes to help you</p>
+        <div class="col">
+            understand the concepts.
+        </div>
+    </div>
+    <div class="iframe">
+        <iframe width="900" height="550" src="https://www.youtube.com/embed/60SRAWmMXyc?si=gZzEDXDygFHMeoMH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="explore">
+        <a href=""><button>Explore free learning</button></a>
+    </div>
+    <div class="offer">
+        <p>Courses Offered.</p>
+    </div>
+    <div class="cards">
+        <div class="firstrow">
+                {% for i in data %}
+                    <a href="">
+                    <div class="card">
+                        <div class="top">
+                            <img src="{{ i.image.url }}" alt="" width="15px">
+                            <div class="inner">   
+                                <p>{{ i.cou_name }}</p>
+                                <div class="live">
+                                    <p id="colr">{{ i.batch_type }}</p>
+                                    <P id="colb">{{ i.language }}</P>
+                                </div>
+                                <div class="last">
+                                    <p>{{ i.dis_type }}</p>
+                                </div>
+                                <div class="amt">
+                                    <p>₹ {{ i.final_price }}</p>
+                                    <p>(+ GST)</p>
+                                    <p id="del"><del>₹ {{ i.actual_price }}</del></p>
+                                    <p id="off">{{ i.offer }}% OFF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button><a href="{% url 'course' i.id %}" style="text-decoration: none;color: black; font-weight: 600;">View Details</a></button>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+    </div>
+    <div class="comp">
+        <div class="first">
+            <p>Top&nbsp;<div class="col">companies</div> &nbsp;our students</p>
+        </div>
+        <p>working with</p>
+    </div>
+    <div class="compimg">
+        <img src="{% static 'images/com.webp' %}" alt="">
+    </div>
+    <div class="but">
+        <a href=""><button>Explore Courese</button></a>
+    </div>
+    <hr color="gray">
+
+    <div class="footer">
+        <div class="left1">
+            <img src="{% static 'images/logo.png' %}" alt="" id="img">
+            <p style="margin-top: 10px;">Let's connect with our socials</p>
+            <a href=""><img src="{% static 'images/icons.png' %}" alt="" style="width: 60%; margin-top: 10px;"></a>
+        </div>
+        <div class="left2">
+            <h3>COMPANY</h3>
+            <a href=""><p>About Us</p></a>
+            <a href=""><p>Support</p></a>
+            <a href=""><p>Privacy Policy</p></a>
+            <a href=""><p>Terms and Conditions</p></a>
+            <a href=""><p>Pricing and Refund</p></a>
+            <a href=""><p>Hire From Us</p></a>
+            <a href=""><p>Submit Projects</p></a>
+        </div>
+        <div class="right1">
+            <h3>COMMUNITY</h3>
+            <a href=""><p>Discord</p></a>
+        </div>
+        <div class="right2">
+            <h3>Get In Touch</h3>
+            <p id="fir">Online: &nbsp;&nbsp;11am - 8pm</p>
+            <p><b>+917760017422</b></p>
+            <p id="fir">Offline: &nbsp;&nbsp;11am - 8pm</p>
+            <p><b>+917760017422</b></p>
+            <p id="email">422vinaykumar@gmail.com</p>
+            <p id="address">#211, B G PURA HOBLI, <br>MALAVALLI TALUKU, KUNDUR <br>VILLAGE, MANDYA, KARNATAKA, 571430</p>
+        </div>
+    </div>
+
+    <hr color="gray">
+
+    <div class="copy">
+        <p>Copyright &copy; 2025 Sheryians Pvt. Ltd.</p>
+        <p>All Rights Reserved.</p>
+    </div>
+</body>
+</html>

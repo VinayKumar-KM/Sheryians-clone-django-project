@@ -1,0 +1,379 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo_sh.webp' %}">
+    <title>Courses</title>
+    <!-- <link rel="stylesheet" href="courses.css"> -->
+     <style>
+       @font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Regular.otf' %}") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Light.otf' %}") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Ultrabold.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "juana";
+  src: url("{% static 'fonts/Fontspring-DEMO-juana-thinit.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  --text-color: #24cfa6;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  background-image: url("images/background.svg");
+  color: white;
+  font-family: "PPNeueMachina", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  img {
+    width: 5.8%;
+    margin-left: 100px;
+  }
+
+  .logo {
+    position: relative;
+    top: 14px;
+  }
+
+  .text {
+    position: absolute;
+    left: 140px;
+    top: 10px;
+  }
+
+  .right {
+    margin-left: 100px;
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 400px;
+    gap: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+  }
+
+  button {
+    background-color: var(--text-color);
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: -10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+#shake {
+  display: inline-block;
+  color: brown;
+  font-weight: 700;
+  animation: shake 2.8s infinite;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(-7px, 0);
+  }
+  10% {
+    transform: translate(7px, 0);
+  }
+  15% {
+    transform: translate(-7px, 0);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.maintext {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  font-size: 80px;
+  .first {
+    display: flex;
+  }
+  .col {
+    color: var(--text-color);
+  }
+
+  .cards {
+    margin-top: 20px;
+    font-family: Helvetica;
+
+    .firstrow {
+      display: flex;
+      margin-right: 50px;
+      gap: 30px;
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+      }
+
+      .card {
+        width: 100%;
+        height: 420px;
+        border-radius: 5px;
+        background-color: rgb(41, 38, 38);
+
+        button {
+          width: 100%;
+          height: 40px;
+          background-color: var(--text-color);
+          border: none;
+          font-size: 25px;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+
+        .inner {
+          margin: 15px 15px 15px 15px;
+
+          .live {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+
+            #colr {
+              background-color: rgb(212, 71, 71);
+              border-radius: 5px;
+              font-size: 16px;
+            }
+
+            #colb {
+              background-color: rgba(137, 128, 128, 0.351);
+              font-size: 16px;
+              border-radius: 5px;
+            }
+          }
+
+          .last {
+            color: var(--text-color);
+            font-size: 14px;
+            margin-top: 55px;
+          }
+          .amt {
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 21px;
+
+            #del {
+              color: rgb(184, 161, 161);
+            }
+
+            #off {
+              font-size: 13px;
+              background-color: aliceblue;
+              color: black;
+              border-radius: 5px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .secondrow {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-top: 100px;
+    gap: 30px;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+    }
+
+    .card {
+      width: 100%;
+      height: 420px;
+      border-radius: 5px;
+      background-color: rgb(41, 38, 38);
+
+      button {
+        width: 100%;
+        height: 40px;
+        background-color: var(--text-color);
+        border: none;
+        font-size: 25px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .inner {
+        margin: 15px 15px 15px 15px;
+
+        .live {
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+
+          #colr {
+            background-color: rgb(212, 71, 71);
+            border-radius: 5px;
+            font-size: 16px;
+          }
+
+          #colb {
+            background-color: rgba(137, 128, 128, 0.351);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+
+        .last {
+          color: var(--text-color);
+          font-size: 14px;
+          margin-top: 55px;
+        }
+        .amt {
+          display: flex;
+          justify-content: space-evenly;
+          font-size: 21px;
+
+          #del {
+            color: rgb(184, 161, 161);
+          }
+
+          #off {
+            font-size: 13px;
+            background-color: aliceblue;
+            color: black;
+            border-radius: 5px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  }
+}
+
+
+
+     </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href=""><img src="{% static 'images/logo.png' %}" alt=""></a>
+        </div>
+        <div class="text">
+            <a href="">
+                <p>Sheryians</p>
+                <p>coding school</p>
+            </a>
+        </div>
+        <div class="right">
+            <a href="{% url 'get' %}">Home</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="" id="shake">Cohort 2.0</a>
+            <a href="">Request Callback</a>
+            <a href="{% url 'sign' %}"><button>Sign In</button></a>
+        </div>
+    </div>
+    <div class="maintext">
+        <div class="first">
+            <p>We're not a&nbsp;<div class="col">course</div></p>
+        </div>
+        <div class="col" style="margin-top: -20px;">factory.</div>
+        <p style="font-size: 40px;margin-top: 50px;">We focus on courses that really help.</p>
+        <p style="font-size: 27px; margin-top: 100px;">Courses which do work &#x2193;</p>
+        <div class="cards">
+        <div class="firstrow">
+                {% for i in data %}
+                    <a href="">
+                    <div class="card">
+                        <div class="top">
+                            <img src="{{ i.image.url }}" alt="" width="15px">
+                            <div class="inner">   
+                                <p>{{ i.cou_name }}</p>
+                                <div class="live">
+                                    <p id="colr">{{ i.batch_type }}</p>
+                                    <P id="colb">{{ i.language }}</P>
+                                </div>
+                                <div class="last">
+                                    <p>{{ i.dis_type }}</p>
+                                </div>
+                                <div class="amt">
+                                    <p>₹ {{ i.final_price }}</p>
+                                    <p>(+ GST)</p>
+                                    <p id="del"><del>₹ {{ i.actual_price }}</del></p>
+                                    <p id="off">{{ i.offer }}% OFF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button><a href="{% url 'course' i.id %}" style="text-decoration: none;color: black; font-weight: 600;">View Details</a></button>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

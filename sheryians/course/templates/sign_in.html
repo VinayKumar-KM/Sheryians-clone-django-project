@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo_sh.webp' %}">
+    <title>Sign In</title>
+     <style>
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Regular.otf' %}") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Light.otf' %}") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMachina";
+  src: url("{% static 'fonts/PPNeueMachina-Ultrabold.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "juana";
+  src: url("{% static 'fonts/Fontspring-DEMO-juana-thinit.otf' %}") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  --text-color: #24cfa6;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "PPNeueMachina", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  img {
+    width: 5.8%;
+    margin-left: 100px;
+  }
+
+  .logo {
+    position: relative;
+    top: 14px;
+  }
+
+  .text {
+    position: absolute;
+    left: 140px;
+    top: 10px;
+  }
+
+  .right {
+    margin-left: 100px;
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 400px;
+    gap: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+  }
+
+  button {
+    background-color: var(--text-color);
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: -10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+#shake {
+  display: inline-block;
+  color: brown;
+  font-weight: 700;
+  animation: shake 2.8s infinite;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  5% {
+    transform: translate(-7px, 0);
+  }
+  10% {
+    transform: translate(7px, 0);
+  }
+  15% {
+    transform: translate(-7px, 0);
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.main{
+    position: absolute;
+    top: 180px;
+    left: 37%;
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .options{
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .mobile{
+        margin-top: 60px;
+        font-size: 16px;
+
+        input{
+            margin-top: 10px;
+            width: 350px;
+            height: 30px;
+            background-color: rgb(65, 58, 58);
+            color: gray;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+    hr{
+        margin-top: 30px;
+    }
+}
+     </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href=""><img src="{% static 'images/logo.png' %}" alt=""></a>
+        </div>
+        <div class="text">
+            <a href="">
+                <p>Sheryians</p>
+                <p>coding school</p>
+            </a>
+        </div>
+        <div class="right">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'course' %}">Courses</a>
+            <a href="" id="shake">Cohort 2.0</a>
+            <a href="">Request Callback</a>
+            <a href="{% url 'sign'%}"><button>Sign In</button></a>
+        </div>
+    </div>
+    <div class="main">
+        <p style="font-size: 30px;">Sign In</p>
+        <div class="options">
+            <a href=""><u>Phone</u></a>
+            <a href="" style="color: gray;">Email</a>
+        </div>
+        <div class="mobile">
+            <p>Mobile Number *</p>
+            <input type="text" placeholder="Enter Your Mobile Number">
+        </div>
+        <p style="color: gray;"><hr style="width:45%;display:inline-block; margin-bottom: 5px;" color="gray"> Or <hr style="width:45%;display:inline-block; margin-bottom: 5px;" color="gray"></p>
+    </div>
+    
+</body>
+</html>
